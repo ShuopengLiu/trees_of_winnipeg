@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'neighbourhoods/index'
+  get 'neighbourhoods/show'
   get 'categories/index'
   get 'categories/show'
   get 'trees/index'
