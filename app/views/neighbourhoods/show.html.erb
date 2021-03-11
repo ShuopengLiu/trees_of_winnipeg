@@ -1,2 +1,12 @@
-<h1>Neighbourhoods#show</h1>
-<p>Find me in app/views/neighbourhoods/show.html.erb</p>
+<h2 class="title is-2"><%= @neighbourhood.neighbourhood_name %></h2>
+
+<p class="mb-5">
+  There are <%= @neighbourhood.trees.count%> trees in <%= @neighbourhood.neighbourhood_name %>.
+</p>
+
+<h3 class="title is-3">List of trees</h3>
+<ul>
+  <% @neighbourhood.trees.each do |tree|%>
+    <li><%= link_to tree.source_id, tree%></li>
+  <% end %>
+</ul>

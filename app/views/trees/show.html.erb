@@ -1,12 +1,28 @@
+<div class="container-sm">
+  <div class="row" style="margin-bottom: 50px;">
+    <h1>Detailed Infomation of Tree <%= @tree.source_id%></h1>
+  </div>
 
-<h1>Trees#show</h1>
-<p>Find me in app/views/trees/show.html.erb</p>
+  <div class="row">
+    <div class="col-sm">
+        <p>
+            <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=17
+              &size=400x300
+              &center=#{@tree.latitude},#{@tree.longitude}
+              &markers=color:red%7C#{@tree.latitude},#{@tree.longitude}
+              &key=AIzaSyA4OXhP_ni_3629dBYljRa_LBLPtcinjGo", alt: "Map" %>
+        </p>
+    </div>
+    <div class="col-sm">
+      <p><strong>Diameter: </strong><%= @tree.diameter%></p>
+      <p><strong>Botanical Name: </strong><%= @tree.category.botanical_name%></p>
+      <p><strong>Common Name: </strong><%= @tree.category.common_name%></p>
+      <p><strong>Park: </strong><%= @tree.park.park_name%> </p>
+      <p><strong>Neighbourhood: </strong><%= @tree.neighbourhood.neighbourhood_name%></p>
+    </div>
+  </div>
+</div>
 
-<p>
-    <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=17
-      &size=400x300
-      &center=#{@tree.latitude},#{@tree.longitude}
-      &markers=color:red%7C#{@tree.latitude},#{@tree.longitude}
-      &key=AIzaSyA4OXhP_ni_3629dBYljRa_LBLPtcinjGo", alt: "Map" %>
-</p>
+
+
 

@@ -1,2 +1,12 @@
-<h1>Categories#show</h1>
-<p>Find me in app/views/categories/show.html.erb</p>
+<h2 class="title is-2"><%= @category.botanical_name %></h2>
+<h2 class="title is-2">Commonly known as: <%= @category.common_name %></h2>
+<p class="mb-5">
+  There are <%= @category.trees.count%> <%= @category.common_name %> trees in Winnipeg.
+</p>
+
+<h3 class="title is-3">List of all <%= @category.common_name %> trees</h3>
+<ul>
+  <% @category.trees.each do |tree|%>
+    <li><%= link_to tree.source_id, tree%></li>
+  <% end %>
+</ul>

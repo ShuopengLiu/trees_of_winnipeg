@@ -1,2 +1,12 @@
-<h1>Parks#show</h1>
-<p>Find me in app/views/parks/show.html.erb</p>
+<h2 class="title is-2"><%= @park.park_name %></h2>
+
+<p class="mb-5">
+  There are <%= @park.trees.count%> trees in <%= @park.park_name %>.
+</p>
+
+<h3 class="title is-3">List of trees</h3>
+<ul>
+  <% @park.trees.each do |tree|%>
+    <li><%= link_to tree.source_id, tree%></li>
+  <% end %>
+</ul>
