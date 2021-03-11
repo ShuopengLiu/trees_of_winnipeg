@@ -1,11 +1,16 @@
-<div class="columns">
+<div class="container-sm">
+  <div class="row" style="margin-bottom: 50px;">
+    <h1>About the Data Source</h1>
+  </div>
 
-  <div class="column">
-    <h2 class="title is-2">Trees in Winnipeg</h2>
-    <ol class="ml-5">
-      <% @trees.each do |tree|%>
-        <li><%= link_to tree.source_id, tree%> <%= tree.diameter%></li>
-      <% end %>
-    </ol>
+  <div class="row">
+    <div class="col-sm">
+      <p><strong>The tree data I’m using came from City of Winnipeg Open Data Portal.
+      This dataset contains detailed information of all public trees located in the City of Winnipeg,
+      including botanical name, common name and precise location.</p>
+    </div>
+    <div class="col-sm">
+      <img src="./erd.jpg" class="img-fluid" alt="N/A">
+    </div>
   </div>
 </div>
