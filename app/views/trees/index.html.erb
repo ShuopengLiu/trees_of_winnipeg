@@ -1,31 +1,26 @@
-<h1>Trees in Winnipeg</h1>
 
+<h1>Trees in Winnipeg</h1>
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th scope="col">Tree ID</th>
+      <th scope="col">Diameter</th>
+      <th scope="col">Botanical Name</th>
+      <th scope="col">Common Name</th>
+      <th scope="col">Park</th>
+      <th scope="col">Neighbourhood</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td colspan="2">Larry the Bird</td>
-      <td>@twitter</td>
-    </tr>
+    <% @trees.each do |tree|%>
+      <tr>
+        <th scope="row"><%= link_to tree.source_id, tree%></th>
+        <td><%= tree.diameter%></td>
+        <td><%= tree.category.botanical_name%></td>
+        <td><%= tree.category.common_name%></td>
+        <td><%= tree.park.park_name%></td>
+        <td><%= tree.neighbourhood.neighbourhood_name%></td>
+      </tr>
+    <%end%>
   </tbody>
 </table>

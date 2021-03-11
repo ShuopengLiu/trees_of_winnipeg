@@ -1,2 +1,12 @@
+
 <h1>Trees#show</h1>
 <p>Find me in app/views/trees/show.html.erb</p>
+
+<p>
+    <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=17
+      &size=400x300
+      &center=#{@tree.latitude},#{@tree.longitude}
+      &markers=color:red%7C#{@tree.latitude},#{@tree.longitude}
+      &key=AIzaSyA4OXhP_ni_3629dBYljRa_LBLPtcinjGo", alt: "Map" %>
+</p>
+
