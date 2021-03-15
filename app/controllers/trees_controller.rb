@@ -1,6 +1,7 @@
 class TreesController < ApplicationController
+  include Pagy::Backend
   def index
-    @trees = Tree.all
+    @pagy, @trees = pagy(Tree.all)
   end
 
   def show

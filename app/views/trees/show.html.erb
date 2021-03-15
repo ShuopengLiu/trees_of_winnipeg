@@ -15,10 +15,10 @@
     </div>
     <div class="col-sm">
       <p><strong>Diameter: </strong><%= @tree.diameter%></p>
-      <p><strong>Botanical Name: </strong><%= @tree.category.botanical_name%></p>
-      <p><strong>Common Name: </strong><%= @tree.category.common_name%></p>
-      <p><strong>Park: </strong><%= @tree.park.park_name%> </p>
-      <p><strong>Neighbourhood: </strong><%= @tree.neighbourhood.neighbourhood_name%></p>
+      <p><strong>Botanical Name: </strong><%= link_to @tree.category.botanical_name, @tree.category%></p>
+      <p><strong>Common Name: </strong><%= link_to @tree.category.common_name, @tree.category%></p>
+      <p><strong>Park: </strong><%= link_to @tree.park.park_name, @tree.park%> </p>
+      <p><strong>Neighbourhood: </strong><%= link_to @tree.neighbourhood.neighbourhood_name, @tree.neighbourhood%></p>
     </div>
   </div>
 </div>

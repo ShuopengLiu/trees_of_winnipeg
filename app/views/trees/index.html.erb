@@ -16,11 +16,13 @@
       <tr>
         <th scope="row"><%= link_to tree.source_id, tree%></th>
         <td><%= tree.diameter%></td>
-        <td><%= tree.category.botanical_name%></td>
-        <td><%= tree.category.common_name%></td>
-        <td><%= tree.park.park_name%></td>
-        <td><%= tree.neighbourhood.neighbourhood_name%></td>
+        <td><%= link_to tree.category.botanical_name, tree.category%></td>
+        <td><%= link_to tree.category.common_name, tree.category%></td>
+        <td><%= link_to tree.park.park_name, tree.park%></td>
+        <td><%= link_to tree.neighbourhood.neighbourhood_name, tree.neighbourhood%></td>
       </tr>
     <%end%>
   </tbody>
 </table>
+
+<%== pagy_nav(@pagy)%>
